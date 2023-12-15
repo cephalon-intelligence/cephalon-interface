@@ -6,7 +6,7 @@ repository = "https://github.com/cephalon-intelligence/cephalon-interface"
 documentation = "https://cephalon.systems/"
 readme = "README.md"
 authors = ["Hart Traveller <research@cephalon.io>"]
-packages = [{ include = "ci" }]
+packages = [{ include = "ci" }, { include = "ci/.include"}]
 
 [tool.poetry.dependencies]
 python = ">3.9.7, <4.0"
