@@ -26,11 +26,11 @@ def auth_instructions() -> None:
     with main_col:
         st.markdown("# ")
         st.write("To create an account, run the following command in your terminal:")
-        st.code("ci register", language="bash")
+        st.code("ci account register", language="bash")
         st.write("To login to an account, run the following command in your terminal:")
-        st.code("ci login", language="bash")
+        st.code("ci account login", language="bash")
         st.write("To reset your password, run the following command in your terminal:")
-        st.code("ci password", language="bash")
+        st.code("ci account password", language="bash")
         st.write("# ")
         refresh_button = st.button("Refresh", use_container_width=True)
         if refresh_button:
