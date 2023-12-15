@@ -1,5 +1,5 @@
-from ci.api.account import AccountInterface
-from ci.api.system import SystemInterface
+from ci.client.account import AccountInterface
+from ci.client.system import SystemInterface
 
 
 class System:
