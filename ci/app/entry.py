@@ -3,8 +3,8 @@ from fuzzywuzzy import fuzz, process
 from streamlit_searchbox import st_searchbox
 from ci import env
 from ci import system
-from ci.use import streamlit
-from ci.gui.node import testing
+from ci.utility import streamlit
+from ci.app.node import testing
 
 
 st.set_page_config(
