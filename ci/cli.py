@@ -128,11 +128,11 @@ def account_access():
 def account_request():
     pass
 
-@entry.group(name="gui", help="Graphical user interface utilities.")
-def gui():
+@entry.group(name="app", help="Graphical user interface utilities.")
+def app():
     pass
 
-@gui.command(name="start", help="Start graphical user interface.")
+@app.command(name="start", help="Start graphical user interface.")
 @click.option(
     "--open-browser/--no-open-browser",
     "-o/-no",
