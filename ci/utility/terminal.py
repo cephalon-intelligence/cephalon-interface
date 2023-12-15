@@ -4,7 +4,7 @@ from getpass import getpass
 from typing import Union, Optional, Any
 from rich.color import ANSI_COLOR_NAMES
 from rich.console import Console
-from ci.use import validation
+from ci.utility import validation
 
 console = Console()
 
