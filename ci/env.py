@@ -14,7 +14,7 @@ PATH_PACKAGE = Path(__file__).parent
 PATH_INCLUDE = PATH_PACKAGE / ".include"
 PATH_LOGO = PATH_INCLUDE / "logo.png"
 PATH_THEME = PATH_INCLUDE / "theme.css"
-PATH_APP_ENTRY = PATH_PACKAGE / "gui" / "app.py"
+PATH_APP_ENTRY = PATH_PACKAGE / "app" / "entry.py"
 
 
 CFG_PAGE_ICON = "🧠"
