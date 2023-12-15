@@ -2,7 +2,7 @@ import subprocess
 from pick import pick
 import rich_click as click
 from pycooltext import cooltext
-from ci.use import terminal, validation, streamlit
+from ci.utility import terminal, validation, streamlit
 from ci import system
 from ci import env
 
@@ -25,7 +25,7 @@ class ConsoleSequence:
         else:
             terminal.failure_output(result.err_value)
 
-    #todo: implement
+    # todo: implement
     @staticmethod
     def run_account_confirm():
         raise NotImplementedError()
@@ -66,9 +66,11 @@ def entry(ctx):
         else:
             terminal.write("not logged in", color="red")
 
+
 @entry.group(name="account", help="Account interface utilities.")
 def account():
     pass
+
 
 # todo: implement
 # @account.command(name="status")
@@ -82,6 +84,7 @@ def account():
 #         terminal.command_output("ci account login")
 #     elif _status == LocalAccountStatus.EMAIL_UNVERIFIED:
 #         pass
+
 
 @account.command(name="register", help="Register a new account.")
 @click.option(
@@ -111,13 +114,16 @@ def account_logout():
 def account_login():
     ConsoleSequence.run_account_login()
 
+
 @account.command(name="password", help="Request a password reset.")
 def account_password():
     pass
 
+
 @account.command(name="info", help="View account information.")
 def account_info():
     pass
+
 
 @account.command(name="access", help="View table of available resources.")
 def account_access():
@@ -128,9 +134,11 @@ def account_access():
 def account_request():
     pass
 
+
 @entry.group(name="app", help="Graphical user interface utilities.")
 def app():
     pass
+
 
 @app.command(name="start", help="Start graphical user interface.")
 @click.option(
@@ -162,6 +170,3 @@ def gui_start(open_browser: bool) -> None:
             open_browser=open_browser,
         )
     )
-
-
-
