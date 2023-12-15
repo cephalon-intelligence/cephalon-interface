@@ -1,5 +1,5 @@
 import regex as re
-from ci.use import terminal
+from ci.utility import terminal
 from rich.console import Console
 
 c = Console()
