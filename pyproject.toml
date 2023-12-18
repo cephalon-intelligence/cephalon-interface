@@ -27,6 +27,7 @@ pycooltext = "^0.0.1"
 streamlit-searchbox = "^0.1.6"
 fuzzywuzzy = "^0.18.0"
 python-levenshtein = "^0.23.0"
+pycountry = "^23.12.11"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.27.1"
