@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cephalon-interface"
-version = "0.1.5"
+version = "0.1.6"
 description = "API client and GUI app for interacting with Cephalon Intelligence research tools."
 repository = "https://github.com/cephalon-intelligence/cephalon-interface"
 documentation = "https://cephalon.systems/"
