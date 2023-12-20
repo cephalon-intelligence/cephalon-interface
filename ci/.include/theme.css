@@ -10,11 +10,7 @@ footer {
     display: none;
 }
 
-/* div[data-testid="stSidebarContent"] {
-    border-right: 1px solid grey;
-} */
 
-/* get rid of links that hover next to headings */
 
 h1>div>a,
 h2>div>a,
@@ -29,16 +25,14 @@ button[data-testid="StyledFullScreenButton"] {
     display: none !important;
 }
 
-
-/* controls main content height */
-
 section:not([data-testid="stSidebar"]) .block-container {
-    margin-top: -5.5rem;
+    padding: 0.55rem 1.8rem !important;
+
 }
 
 
 section[data-testid="stSidebar"] .block-container {
-    margin-top: -3rem;
+    margin-top: -4.5rem;
 }
 
 details summary div[data-testid="stMarkdownContainer"] p {
@@ -63,14 +57,14 @@ svg[title="open"] {
     color: rgb(222, 198, 178);
 } */
 
-/* input {
+input {
     color: rgb(222, 198, 178) !important;
 }
 
 
 div[data-baseweb="select"] div {
     color: rgb(222, 198, 178) !important;
-} */
+}
 
 /* p,
 li {
@@ -81,17 +75,16 @@ div[data-testid="stSidebarUserContent"] h1 {
     text-align: center;
 }
 
-/* add button transition */
 
 button {
     transition: 0.3s ease !important;
 }
 
-button[data-testid="baseButton-header"] svg {
+button[data-testid="baseButton-header"] {
     color: red;
 }
 
-button[kind="headerNoPadding"] svg {
+button[kind="headerNoPadding"] {
     color: lightgreen;
 }
 
