@@ -3,8 +3,8 @@ from pick import pick
 import rich_click as click
 from pycooltext import cooltext
 from ci.utility import terminal, validation, streamlit
-from ci import system
-from ci import env
+from ci.core import cephalon
+from ci import var
 
 
 class ConsoleSequence:
@@ -15,7 +15,7 @@ class ConsoleSequence:
         email = terminal.email_input()
         while not validation.check_email_format(email=email, verbose=True):
             email = terminal.email_input()
-        result = system.account.register(
+        result = cephalon.account.register(
             email=email, first_name=first_name, last_name=last_name
         )
         print()
@@ -46,7 +46,7 @@ class ConsoleSequence:
         while not validation.check_email_format(email=email, verbose=True):
             email = terminal.email_input()
         password = terminal.password_input()
-        result = system.account.login(email=email, password=password)
+        result = cephalon.account.login(email=email, password=password)
         print()
         if result.is_ok():
             terminal.success_output(result.ok_value)
@@ -55,13 +55,13 @@ class ConsoleSequence:
 
 
 @click.group(name="ci", invoke_without_command=True, help="Cephalon Interface CLI.")
-@click.version_option(env.PACKAGE_VERSION, prog_name=env.PACKAGE_NAME)
+@click.version_option(var.PACKAGE_VERSION, prog_name=var.PACKAGE_NAME)
 @click.pass_context
 def entry(ctx):
     if ctx.invoked_subcommand is None:
         cooltext("CI")
-        terminal.write(f"[deep_sky_blue3]version [dark_orange]{env.PACKAGE_VERSION}")
-        if system.account.authenticated:
+        terminal.write(f"[deep_sky_blue3]version [dark_orange]{var.PACKAGE_VERSION}")
+        if cephalon.account.authenticated:
             terminal.write("authenticated", color="light_green")
         else:
             terminal.write("not logged in", color="red")
@@ -107,7 +107,7 @@ def account_confirm():
 
 @account.command(name="logout", help="Log out of currently logged in account.")
 def account_logout():
-    system.account.logout()
+    cephalon.account.logout()
 
 
 @account.command(name="login", help="Login to an existing account.")
@@ -115,14 +115,14 @@ def account_login():
     ConsoleSequence.run_account_login()
 
 
-@account.command(name="password", help="Request a password reset.")
-def account_password():
-    pass
+@account.command(name="recover", help="Request a password reset.")
+def account_recover():
+    raise NotImplementedError()
 
 
 @account.command(name="info", help="View account information.")
 def account_info():
-    pass
+    raise NotImplementedError()
 
 
 @account.command(name="access", help="View table of available resources.")
@@ -166,7 +166,7 @@ def app():
 def gui_start(open_browser: bool) -> None:
     subprocess.run(
         streamlit.make_app_start_command(
-            app_path=str(env.PATH_APP_ENTRY),
+            app_path=str(var.PATH_APP_ENTRY),
             open_browser=open_browser,
         )
     )
